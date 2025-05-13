@@ -23,7 +23,7 @@
         android:id="@+id/login_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/kucharz" />
+        app:srcCompat="@drawable/kucharz_login" />
 
     <TextView
         android:id="@+id/login_header"
