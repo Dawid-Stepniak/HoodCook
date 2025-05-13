@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LogInActivity">
 
     <TextView
-        android:id="@+id/brand_header_main_activity"
+        android:id="@+id/brand_header_log_in_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -19,22 +19,46 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/login_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/kucharz_login" />
+
     <TextView
-        android:id="@+id/login_welcome"
+        android:id="@+id/login_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="15dp"
-        android:text="@string/welcome"
+        android:text="@string/login_header"
         android:textAlignment="center"
-        android:textSize="16sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/welcome_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/kucharz" />
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="6dp"
+            android:ems="10"
+            android:hint="@string/login_email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="@string/login_password"
+            android:inputType="textPassword" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -46,14 +70,8 @@
             android:id="@+id/login_btn_final"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
             android:text="@string/login" />
 
-        <Button
-            android:id="@+id/sign_up_btn"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_up" />
     </LinearLayout>
 
 </LinearLayout>
