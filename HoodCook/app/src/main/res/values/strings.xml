@@ -5,12 +5,14 @@
     <string name="welcome">Witamy w HoodCook, odkryj lokalne smaki!</string>
     <string name="login">Zaloguj</string>
     <string name="sign_up">Rejestracja</string>
+    <string name="content_description_welcome">Kucharz machający dłonią na powitanie</string>
 
 
     <!-- Ekran logowania -->
     <string name="login_header">Zaloguj się</string>
     <string name="login_email">E-mail</string>
     <string name="login_password">Hasło</string>
+    <string name="content_description_login">Kucharz machający dłonią na powitanie</string>
 
 
     <!-- Ekran rejestracji -->
@@ -18,4 +20,5 @@
     <string name="firstName">Imię</string>
     <string name="surname">Nazwisko</string>
     <string name="register_btn">Zarejestruj</string>
+    <string name="content_description_signup">Kucharz piszący na klawiaturze</string>
 </resources>

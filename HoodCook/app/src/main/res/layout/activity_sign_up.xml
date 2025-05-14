@@ -23,6 +23,7 @@
         android:id="@+id/signup_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:contentDescription="@string/content_description_signup"
         app:srcCompat="@drawable/kucharz_signup" />
 
     <TextView
