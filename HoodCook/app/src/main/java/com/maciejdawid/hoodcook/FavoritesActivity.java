@@ -2,36 +2,25 @@ package com.maciejdawid.hoodcook;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-public class HomePageActivity extends AppCompatActivity {
-
-    BottomNavigationView bottomNavigationView;
-    EditText searchBar;
+public class FavoritesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_favorites);
 
-        bottomNavigationView = findViewById(R.id.bottomNavigation);
-        searchBar = findViewById(R.id.searchBar);
-
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_favorites);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
+                startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                 return true;
             } else if (id == R.id.nav_favorites) {
-                startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                 return true;
             } else if (id == R.id.nav_chat) {
                 startActivity(new Intent(getApplicationContext(), ChatListActivity.class));

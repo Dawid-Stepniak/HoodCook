@@ -30,6 +30,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".ChatListActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".AddOfferActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
+
     </application>
 
 </manifest>
