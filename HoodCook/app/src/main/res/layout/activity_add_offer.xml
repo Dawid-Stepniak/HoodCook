@@ -3,16 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:padding="16dp">
 
     <TextView
+        android:id="@+id/headerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dodawanie oferty"
+        android:text="Dodaj nową ofertę"
+        android:textColor="#2E7D32"
         android:textSize="24sp"
+        android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="32dp"
-        android:textColor="#2E7D32"/>
+        android:layout_marginBottom="24dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/productNameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerText"
+        app:boxBackgroundColor="#F5F5F5"
+        app:boxCornerRadius="8dp"
+        app:hintTextColor="#2E7D32">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/productNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nazwa produktu"
+            android:textColor="#212121"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/categoryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productNameContainer"
+        android:layout_marginTop="16dp"
+        app:boxBackgroundColor="#F5F5F5"
+        app:boxCornerRadius="8dp"
+        app:hintTextColor="#2E7D32">
+
+        <AutoCompleteTextView
+            android:id="@+id/categoryDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Wybierz kategorię"
+            android:inputType="none"
+            android:paddingLeft="16dp"
+            android:textColor="#212121" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/priceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categoryContainer"
+        android:layout_marginTop="16dp"
+        app:boxBackgroundColor="#F5F5F5"
+        app:boxCornerRadius="8dp"
+        app:hintTextColor="#2E7D32">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/priceInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cena za sztukę (PLN)"
+            android:inputType="numberDecimal"
+            android:textColor="#212121"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/addOfferButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceContainer"
+        android:layout_marginTop="24dp"
+        android:text="Dodaj ofertę"
+        android:backgroundTint="#2E7D32"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:padding="12dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

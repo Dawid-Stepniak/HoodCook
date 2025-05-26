@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="priceContainer" type="id" />
+    <item name="headerText" type="id" />
+    <item name="productNameContainer" type="id" />
+    <item name="categoryContainer" type="id" />
+</resources>

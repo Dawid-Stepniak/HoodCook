@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class, Offer.class}, version = 2)
 public abstract class UserDatabase extends RoomDatabase {
 
     private static UserDatabase instance;
@@ -40,4 +40,5 @@ public abstract class UserDatabase extends RoomDatabase {
         }
         return instance;
     }
+    public abstract OfferDao offerDao();
 }
