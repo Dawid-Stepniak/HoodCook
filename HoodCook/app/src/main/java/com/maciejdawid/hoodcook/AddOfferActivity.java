@@ -37,7 +37,8 @@ public class AddOfferActivity extends AppCompatActivity {
         String[] categories = new String[]{"Posiłek", "Warzywa", "Owoce", "Nabiał", "Mięso", "Konfitury", "Inne"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, categories);
         categoryDropdown.setAdapter(adapter);
-
+        categoryDropdown.setKeyListener(null);
+        categoryDropdown.setOnClickListener(v -> categoryDropdown.showDropDown());
         addOfferButton.setOnClickListener(v -> addNewOffer());
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);

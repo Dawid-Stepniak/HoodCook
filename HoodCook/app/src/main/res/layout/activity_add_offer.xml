@@ -23,7 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/headerText"
         app:boxBackgroundColor="#F5F5F5"
-        app:boxCornerRadius="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
         app:hintTextColor="#2E7D32">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -41,17 +44,22 @@
         android:layout_below="@id/productNameContainer"
         android:layout_marginTop="16dp"
         app:boxBackgroundColor="#F5F5F5"
-        app:boxCornerRadius="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
         app:hintTextColor="#2E7D32">
 
-        <AutoCompleteTextView
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/categoryDropdown"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:paddingStart="16dp"
             android:hint="Wybierz kategorię"
-            android:inputType="none"
-            android:paddingLeft="16dp"
-            android:textColor="#212121" />
+            android:textColor="#212121"
+            android:focusable="false"
+            android:clickable="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -61,7 +69,10 @@
         android:layout_below="@id/categoryContainer"
         android:layout_marginTop="16dp"
         app:boxBackgroundColor="#F5F5F5"
-        app:boxCornerRadius="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
         app:hintTextColor="#2E7D32">
 
         <com.google.android.material.textfield.TextInputEditText
