@@ -2,13 +2,28 @@ package com.maciejdawid.hoodcook;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,5 +53,49 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+        RandomQuote();
+    }
+
+    private void RandomQuote() {
+        new Thread(() -> {
+            try {
+                URL url = new URL("https://api.adviceslip.com/advice");
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                connection.setRequestMethod("GET");
+                connection.setConnectTimeout(10000);
+                connection.setReadTimeout(10000);
+
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    InputStream inputStream = connection.getInputStream();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        response.append(line);
+                    }
+
+                    JSONObject json = new JSONObject(response.toString());
+                    JSONObject slip = json.getJSONObject("slip");
+                    String advice = slip.getString("advice");
+
+                    runOnUiThread(() -> {
+                        TextView quoteText = findViewById(R.id.api);
+                        quoteText.setText("\"" + advice);
+                    });
+                } else {
+                    throw new IOException("HTTP error code: " + responseCode);
+                }
+            } catch (Exception e) {
+                Log.e("API", "Błąd połączenia", e);
+                runOnUiThread(() -> {
+                    TextView quoteText = findViewById(R.id.api);
+                    quoteText.setText("Błąd: " + e.getMessage());
+                });
+            }
+        }).start();
     }
 }

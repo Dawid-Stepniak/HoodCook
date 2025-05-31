@@ -37,6 +37,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("androidx.core:core-ktx:1.16.0")
     //implementation(libs.room.common.jvm)
     //implementation(libs.room.runtime.android)
     implementation("androidx.room:room-runtime:2.7.1")

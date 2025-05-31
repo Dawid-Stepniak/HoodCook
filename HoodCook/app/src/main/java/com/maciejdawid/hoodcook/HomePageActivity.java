@@ -2,6 +2,7 @@ package com.maciejdawid.hoodcook;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,7 +30,6 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-        searchBar = findViewById(R.id.searchBar);
         offersRecyclerView = findViewById(R.id.offersRecyclerView);
         offersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         String currentUserEmail = getIntent().getStringExtra("user_email");
@@ -42,10 +42,8 @@ public class HomePageActivity extends AppCompatActivity {
             } else if (id == R.id.nav_favorites) {
                 Intent intent = new Intent(this, FavoritesActivity.class);
                 intent.putExtra("user_email", currentUserEmail);
+                Log.d("NAV_DEBUG", "Przekazany email: " + currentUserEmail); // Dodaj log
                 startActivity(intent);
-                return true;
-            } else if (id == R.id.nav_chat) {
-                startActivity(new Intent(getApplicationContext(), ChatListActivity.class));
                 return true;
             } else if (id == R.id.nav_add) {
                 Intent intent = new Intent(HomePageActivity.this, AddOfferActivity.class);
@@ -68,5 +66,7 @@ public class HomePageActivity extends AppCompatActivity {
                 offersRecyclerView.setAdapter(offerAdapter);
             });
         }).start();
+
+
     }
 }

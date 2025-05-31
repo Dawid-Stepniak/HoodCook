@@ -37,13 +37,15 @@ public class LogInActivity extends AppCompatActivity {
                 User user = db.userDao().getUser(email, password);
                 if (user != null) {
 
-                    runOnUiThread(() -> {
-                        Toast.makeText(this, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LogInActivity.this, HomePageActivity.class);
-                        intent.putExtra("user_email", email);
-                        startActivity(intent);
-                        finish();
-                    });
+                    getSharedPreferences("user_prefs", MODE_PRIVATE)
+                            .edit()
+                            .putString("user_email", email)
+                            .apply();
+
+                    Intent intent = new Intent(LogInActivity.this, HomePageActivity.class);
+                    intent.putExtra("user_email", email);
+                    startActivity(intent);
+                    finish();
                 } else {
                     runOnUiThread(() -> Toast.makeText(this, "Nieprawidłowy email lub hasło", Toast.LENGTH_SHORT).show());
                 }

@@ -7,10 +7,7 @@
         android:id="@+id/nav_favorites"
         android:icon="@drawable/ic_favorite"
         android:title="Obserwowane" />
-    <item
-        android:id="@+id/nav_chat"
-        android:icon="@drawable/ic_chat"
-        android:title="Czaty" />
+
     <item
         android:id="@+id/nav_add"
         android:icon="@drawable/ic_add"

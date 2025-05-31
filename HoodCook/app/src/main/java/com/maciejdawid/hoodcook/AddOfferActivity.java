@@ -52,9 +52,6 @@ public class AddOfferActivity extends AppCompatActivity {
             } else if (id == R.id.nav_favorites) {
                 startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                 return true;
-            } else if (id == R.id.nav_chat) {
-                startActivity(new Intent(getApplicationContext(), ChatListActivity.class));
-                return true;
             } else if (id == R.id.nav_add) {
                 return true;
             } else if (id == R.id.nav_profile) {

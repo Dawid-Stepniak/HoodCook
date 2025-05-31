@@ -1,5 +1,6 @@
 package com.maciejdawid.hoodcook;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,6 +8,7 @@ import androidx.room.PrimaryKey;
 public class Favorite {
     @PrimaryKey(autoGenerate = true)
     public int id;
+    @NonNull
     public String userEmail;
     public int offerId;
 

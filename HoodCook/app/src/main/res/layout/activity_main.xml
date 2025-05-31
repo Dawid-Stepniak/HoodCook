@@ -57,4 +57,25 @@
             android:text="@string/sign_up" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/ttt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:text="Losowy cytat:"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
 </LinearLayout>

@@ -17,20 +17,9 @@
         android:padding="16dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/searchBar"
-        android:layout_below="@id/headerTitle"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Szukaj lokalnych ofert..."
-        android:layout_margin="16dp"
-        android:background="@android:drawable/edit_text"
-        android:paddingHorizontal="16dp" />
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/offersRecyclerView"
-        android:layout_below="@id/searchBar"
+        android:layout_below="@id/headerTitle"
         android:layout_above="@id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="0dp"

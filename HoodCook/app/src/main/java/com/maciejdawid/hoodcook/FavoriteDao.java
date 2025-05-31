@@ -3,6 +3,7 @@ package com.maciejdawid.hoodcook;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Delete;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Dao
 public interface FavoriteDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertFavorite(Favorite favorite);
 
     @Delete

@@ -10,16 +10,17 @@
         android:id="@+id/favoritesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ulubione oferty"
-        android:textSize="24sp"
-        android:gravity="center"
         android:layout_marginTop="32dp"
-        android:textColor="#2E7D32"/>
+        android:gravity="center"
+        android:text="Ulubione oferty"
+        android:textColor="#2E7D32"
+        android:textSize="24sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
