@@ -18,4 +18,20 @@ public class Offer {
         this.pricePerUnit = pricePerUnit;
         this.sellerEmail = sellerEmail;
     }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getPrice() {
+        return pricePerUnit;
+    }
+
+    public String getSellerEmail() {
+        return sellerEmail;
+    }
 }

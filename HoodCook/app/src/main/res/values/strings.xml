@@ -21,4 +21,7 @@
     <string name="surname">Nazwisko</string>
     <string name="register_btn">Zarejestruj</string>
     <string name="content_description_signup">Kucharz piszący na klawiaturze</string>
+
+    <!-- Ekran ofert -->
+    <string name="favorite_icon">Ikona serca</string>
 </resources>

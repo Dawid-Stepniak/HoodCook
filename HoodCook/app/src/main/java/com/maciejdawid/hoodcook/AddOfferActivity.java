@@ -24,7 +24,7 @@ public class AddOfferActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_offer);
 
-        currentUserEmail = "anna.nowak@example.com"; // Tymczasowo - logowanie
+        currentUserEmail = getIntent().getStringExtra("user_email");
 
         database = UserDatabase.getInstance(this);
 
@@ -33,7 +33,7 @@ public class AddOfferActivity extends AppCompatActivity {
         categoryDropdown = findViewById(R.id.categoryDropdown);
         addOfferButton = findViewById(R.id.addOfferButton);
 
-        // kategorie
+
         String[] categories = new String[]{"Posiłek", "Warzywa", "Owoce", "Nabiał", "Mięso", "Konfitury", "Inne"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, categories);
         categoryDropdown.setAdapter(adapter);

@@ -40,6 +40,7 @@ public class LogInActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
                         Toast.makeText(this, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LogInActivity.this, HomePageActivity.class);
+                        intent.putExtra("user_email", email);
                         startActivity(intent);
                         finish();
                     });
